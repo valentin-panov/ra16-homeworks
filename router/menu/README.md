@@ -1,13 +1,17 @@
-Навигационное меню
-===
+[![Build status](https://ci.appveyor.com/api/projects/status/x7iskamf620qn714?svg=true)](https://ci.appveyor.com/project/vapanov/ra-router-menu)
 
-Необходимо реализовать меню для сайта гоночного такси с пунктами «Главная», «Дрифт-такси», «Time Attack» и «Forza Karting». При переходе на страницу соответствующий пункт меню должен подсветиться:  
+WEB VERSION https://valentin-panov.github.io/ra-router-menu/
+
+# Навигационное меню
+
+Необходимо реализовать меню для сайта гоночного такси с пунктами «Главная», «Дрифт-такси», «Time Attack» и «Forza Karting». При переходе на страницу соответствующий пункт меню должен подсветиться:
 
 ![Навигационное меню](./assets/menu.jpg)
 
 ## Описание компонента
 
 Компонент должен создавать HTML-разметку вида:
+
 ```html
 <nav class="menu">
   <a class="menu__item" href="/">Главная</a>
@@ -16,6 +20,7 @@
   <a class="menu__item" href="/forza">Forza Karting</a>
 </nav>
 ```
+
 Активный пункт меню помечается классом `menu__item-active`.
 
 ## Реализация

@@ -1,11 +1,15 @@
-Мировые часы
-===
+[![Build status](https://ci.appveyor.com/api/projects/status/3ldwwu8ufagl9t0y?svg=true)](https://ci.appveyor.com/project/vapanov/ra-lifecycle-http-watches)
+
+WEB VERSION https://valentin-panov.github.io/ra-lifecycle-http-watches/
+
+# Мировые часы
 
 Наверняка вы видели в офисах многих компаний, установленные часы, показывающие время в разных столицах мира:
-* New York
-* Moscow
-* London
-* Tokyo 
+
+- New York
+- Moscow
+- London
+- Tokyo
 
 И т.д.
 
@@ -20,5 +24,6 @@
 Упрощения: если вам сложно реализовать механику со стрелками (через css - см. `transform` и `rotate()`), то вы можете сделать цифровые часы, где отображаются только цифры в формате: ЧЧ:ММ:СС
 
 Подсказки:
+
 1. Посмотреть текущий TimezoneOffset вы можете используя объект `Date`
 1. Можете использовать библиотеку momentjs.
