@@ -1,5 +1,8 @@
-Редактирование
-===
+[![Build status](https://ci.appveyor.com/api/projects/status/k9ueki2o75dkpm6q?svg=true)](https://ci.appveyor.com/project/vapanov/ra-redux-editing)
+
+WEB VERSION https://valentin-panov.github.io/ra-redux-editing/
+
+# Редактирование
 
 Данный проект не предполагает взаимодействия по протоколу HTTP и наличия серверной части.
 
