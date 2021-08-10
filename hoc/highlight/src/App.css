@@ -1,0 +1,136 @@
+html,
+body {
+  font-family: Open Sans, arial, sans-serif;
+  font-size: 2.125vmin;
+  height: 100%;
+  background-color: #ffffff;
+}
+
+.visually-hidden {
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  margin: 0 auto;
+
+  min-height: 100vh;
+
+  line-height: 1.5;
+
+  overflow: hidden;
+}
+
+.CRUD {
+  max-width: 1920px;
+}
+
+.Container {
+  margin: 0 auto;
+  max-width: 90%;
+  /* min-width: 100vw; */
+}
+
+.Container_Header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2vmin 0;
+  margin: 0;
+}
+.Container_title {
+  font-size: medium;
+}
+
+.notes_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+
+.Button {
+  padding: 1vmin;
+  align-self: flex-end;
+}
+
+.Note {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-basis: 20%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid black 1px;
+  padding: 20px;
+  margin: 2vmin;
+  width: 50vmin;
+  font-size: medium;
+}
+
+.textarea {
+  display: block;
+  width: 80%;
+  resize: none;
+  overflow: auto;
+  outline: none;
+  -moz-appearance: none;
+  border: 0px;
+}
+
+.btn {
+  position: absolute;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: black solid 1px;
+  border-radius: 50%;
+  background-color: white;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.UpdateBtn {
+  margin-left: 2vmin;
+  position: relative;
+}
+.DeleteBtn {
+  top: -10px;
+  right: -10px;
+}
+
+.PostBtn {
+  bottom: 5px;
+  right: 5px;
+}
+
+.btnHidden {
+  border: none;
+  background-color: transparent;
+  width: 1px;
+  height: 1px;
+}
+
+.NewNote_label {
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 100%;
+  text-align: left;
+}

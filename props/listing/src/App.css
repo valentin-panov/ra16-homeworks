@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+.listingColumn {
+  margin-top: 0px;
+  padding: 0px;
+  flex: 0 1 33.333%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
