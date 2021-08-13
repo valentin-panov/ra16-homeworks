@@ -1,22 +1,31 @@
 {
-  "name": "backend",
+  "name": "ra-thunk-backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "ra-thunk-backend",
   "main": "index.js",
+  "author": "Valentin Panov",
+  "license": "MIT",
   "scripts": {
     "prestart": "npm install",
-    "start": "forever server.js",
-    "watch": "forever -w server.js"
+    "start": "node index.js",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/valentin-panov/ra-thunk-backend.git"
+  },
+  "engines": {
+    "node": "14.x"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "forever": "^1.0.0",
+    "faker": "^5.5.3",
     "koa": "^2.7.0",
     "koa-body": "^4.1.0",
     "koa-router": "^7.4.0",
-    "koa2-cors": "^2.0.6",
-    "nanoid": "^2.0.3"
+    "koa2-cors": "^2.0.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
   }
 }

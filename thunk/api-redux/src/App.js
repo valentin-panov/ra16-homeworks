@@ -1,19 +1,37 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import createReq from './utils/createReq';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
 import ServiceEditor from './components/ServiceEditor';
 import ServiceListViewer from './components/ServiceListViewer';
 
-export default function App() {
-  const items = useSelector((store) => store.serviceList.list);
+export const baseURL = 'https://ra-thunk-redux-back.herokuapp.com/api/services';
 
+export default function App() {
   return (
-    <div className='wrapper>'>
-      <div className='container'>
-        <ServiceEditor />
-        {items.length > 0 && <ServiceListViewer />}
+    <Router basename='/ra-redux-thunx-api/'>
+      <Route exact path='/'>
+        <Redirect to='/services' />
+      </Route>
+      <div className='wrapper>'>
+        <div className='container'>
+          <Switch>
+            <Route
+              path='/services'
+              exact
+              render={(props) => <ServiceListViewer {...props} />}
+            />
+            <Route
+              path='/services/:id'
+              exact
+              render={(props) => <ServiceEditor {...props} />}
+            />
+          </Switch>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }

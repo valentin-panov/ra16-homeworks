@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import ServiceFilter from './ServiceFilter';
+import { useSelector, useDispatch } from 'react-redux';
 import CloseIcon from '@material-ui/icons/Close';
 import EditIcon from '@material-ui/icons/Edit';
-import { useSelector, useDispatch } from 'react-redux';
-import { edit, remove } from '../reducers/SliceServiceList';
+import Loading from './Loading';
+import Error from './Error';
+import {
+  fetchServicesThunked,
+  deleteServiceThunked,
+} from '../utils/fetchServices';
 
 export default function ServiceListViewer() {
   const dispatch = useDispatch();
   let { items, status, filter } = useSelector((store) => store.serviceList);
+
+  useEffect(() => {
+    dispatch(fetchServicesThunked());
+  }, [dispatch]);
 
   if (filter) {
     items = items
@@ -14,39 +25,32 @@ export default function ServiceListViewer() {
         return item.name.toLowerCase().includes(filter.name.toLowerCase());
       })
       .filter((item) => {
-        return item.price.startsWith(filter.price);
+        return item.price.toString().startsWith(filter.price);
       });
   }
 
   const onDeleteHandler = (id) => {
-    dispatch(remove({ id }));
-  };
-  const onEditHandler = (id) => {
-    dispatch(edit({ id }));
+    dispatch(deleteServiceThunked({ id }));
   };
 
   return (
     <>
-      {items.length > 0 && (
+      <ServiceFilter />
+      {status === 'pending' && <Loading />}
+      {status === 'error' && <Error />}
+
+      {status === 'success' && items.length > 0 && (
         <ul className='card'>
           {items.map((item) => (
             <li className='card_item' key={item.id} dataid={item.id}>
               <span className='card_item-name'>{item.name}</span>
               <span className='card_item-price'>{item.price}</span>
-              <EditIcon
-                style={{
-                  cursor: 'pointer',
-                  border: 'black 1px solid',
-                  marginLeft: '1vmin',
-                }}
-                onClick={() => onEditHandler(item.id)}
-              />
+
+              <Link to={`/services/${item.id}`} style={{ display: 'flex' }}>
+                <EditIcon className='icon' />
+              </Link>
               <CloseIcon
-                style={{
-                  cursor: 'pointer',
-                  border: 'black 1px solid',
-                  marginLeft: '1vmin',
-                }}
+                className='icon'
                 onClick={() => onDeleteHandler(item.id)}
               />
             </li>
